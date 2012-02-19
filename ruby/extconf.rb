@@ -15,6 +15,7 @@ dir_config(extension_name)
 
 # Compilation Flags. Not absolutely necessary, but may save you a headache.
 $DLDFLAGS << " -framework Foundation"
+$DLDFLAGS << " -lobjc `gnustep-config --objc-flags`"
 
 # Do the work
 create_makefile(extension_name)
