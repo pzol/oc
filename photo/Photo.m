@@ -2,9 +2,6 @@
 
 @implementation Photo
 
-@synthesize caption;
-@synthesize photographer;
-
 - (id) init
 {
     if ( self = [super init] )
