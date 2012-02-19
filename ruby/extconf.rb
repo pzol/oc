@@ -14,8 +14,9 @@ extension_name = 'Fraction'
 dir_config(extension_name)
 
 # Compilation Flags. Not absolutely necessary, but may save you a headache.
-$DLDFLAGS << " -framework Foundation"
-$DLDFLAGS << " -lobjc `gnustep-config --objc-flags`"
+$CFLAGS << " -I /usr/include/GNUstep/ -L /usr/lib/GNUstep/ -lgnustep-base -fconstant-string-class=NSConstantString" if RUBY_PLATFORM.downcase.include?("linux")
+$DLDFLAGS << " -framework Foundation" if RUBY_PLATFORM.downcase.include?("darwin")
+# $DLDFLAGS << " -lobjc `gnustep-config --objc-flags`"
 
 # Do the work
 create_makefile(extension_name)
