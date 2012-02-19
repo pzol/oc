@@ -12,6 +12,26 @@
     return self;
 }
 
+- (void) setCaption: (NSString*) string
+{
+  caption = string;
+}
+
+- (void) setPhotographer: (NSString*) string
+{
+  photographer = string;
+}
+
+- (NSString*) caption
+{
+  return caption;
+}
+
+- (NSString*) photographer
+{
+  return photographer;
+}
+
 - (void) dealloc
 {
     [caption release];
