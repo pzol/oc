@@ -8,15 +8,19 @@ def command(cmd)
 end
 
 # Name your extension
-extension_name = 'Fraction'
+extension_name = 'fraction'
 
 # Set your target name
 dir_config(extension_name)
 
 # Compilation Flags. Not absolutely necessary, but may save you a headache.
-$CFLAGS << " -I /usr/include/GNUstep/ -L /usr/lib/GNUstep/ -lgnustep-base -fconstant-string-class=NSConstantString" if RUBY_PLATFORM.downcase.include?("linux")
-$DLDFLAGS << " -framework Foundation" if RUBY_PLATFORM.downcase.include?("darwin")
-# $DLDFLAGS << " -lobjc `gnustep-config --objc-flags`"
+if RUBY_PLATFORM.downcase.include?("linux")
+  $CFLAGS << " " << `gnustep-config --objc-flags`
+  $DLDFLAGS << " -lgnustep-base " << `gnustep-config --objc-libs`
+end
+
+$LDFLAGS << " -framework Foundation"  if RUBY_PLATFORM.downcase.include?("darwin")
+
 
 # Do the work
 create_makefile(extension_name)
