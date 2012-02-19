@@ -1,6 +1,6 @@
 # Compiling pure Objective-C
 
-  gcc  -framework Foundation  main.m -o main
+    gcc  -framework Foundation  main.m -o main
 
 # Ubuntu
 
