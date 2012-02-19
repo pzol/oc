@@ -11,5 +11,5 @@ int main(void) {
   NSString* sin = @"dupa";
   [photo setCaption:sin];
 
-  printf("%s\n", photo.caption.UTF8String);
+  printf("%s\n", [[photo caption] UTF8String]);
 }
