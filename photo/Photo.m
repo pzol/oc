@@ -9,8 +9,8 @@
 {
     if ( self = [super init] )
     {
-        self.caption = @"Default Caption";
-        self.photographer = @"Default Photographer";
+        [self setCaption: @"Default Caption"];
+        [self setPhotographer: @"Default Photographer"];
     }
     return self;
 }

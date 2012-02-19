@@ -9,8 +9,7 @@ int main(void) {
   Photo* photo;
   photo = [Photo new];
   NSString* sin = @"dupa";
-  // [photo setCaption:sin];
-  photo.caption = sin;
+  [photo setCaption:sin];
 
   printf("%s\n", photo.caption.UTF8String);
 }
