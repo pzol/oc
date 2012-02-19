@@ -1,6 +1,11 @@
 #import "fraction.h"
 
 @implementation Fraction
+-(id) init
+{
+  [super init];
+}
+
 -(void)   setNumerator:   (VALUE) _numerator {
     numerator = _numerator;
 }
