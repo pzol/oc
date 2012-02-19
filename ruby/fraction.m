@@ -3,7 +3,7 @@
 @implementation Fraction
 -(id) init
 {
-  [super init];
+  return [super init];
 }
 
 -(void)   setNumerator:   (VALUE) _numerator {
